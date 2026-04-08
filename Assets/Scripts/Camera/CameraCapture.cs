@@ -21,13 +21,9 @@ public class CameraCapture : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            TakePhoto();
-        }
     }
 
-    void TakePhoto()
+    public void TakePhoto()
     {
         RenderTexture.active = rt;
         Texture2D photo = new Texture2D(width, height);

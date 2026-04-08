@@ -16,6 +16,7 @@ public class InterfaceMovement : MonoBehaviour, IDragHandler
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        transform.SetAsLastSibling();
     }
     
 }
