@@ -5,7 +5,7 @@ public class ProhibitionNumberData : ProhibitionData
 {
     public NumberType numberType;
     public symbolType symbolType;
-    public int number;
+    public float number;
 }
 public enum NumberType
 {

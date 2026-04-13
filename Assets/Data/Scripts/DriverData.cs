@@ -10,16 +10,17 @@ public class DriverData : ScriptableObject
     public string plaque = "AA-000-AA";
     [Tooltip("Nationalité de la voiture")]
     public GameObject carPrefab;
-    public DisplayData displayDataCar;
+    public DriveType driveType;
     
     [Header("Identity")]
     public string firstName;
     public string familyName;
-    public DisplayData displayDataIdentity;
+    public LicenceType licenceType;
+    public DisplayData displayData;
     public Nationality nationality;
     public Gender gender;
     public int age;
-    public Vector3 validity = new Vector3(29, 12, 2006);
+    public bool validity;
 
 }
 
@@ -36,4 +37,15 @@ public enum Gender
     Female,
     Nb
 }
-
+public enum LicenceType
+{
+    Apprentie,
+    Normal,
+    Senior
+}
+public enum DriveType
+{
+    Triange,
+    Carré,
+    Rond
+}
