@@ -25,7 +25,7 @@ public class InterfaceMovement : MonoBehaviour, IDragHandler
         transform.SetAsLastSibling();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(1))
         {

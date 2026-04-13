@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2fa1a4e23a07b4a9f09253bdf566ef, type: 3}
   m_Name: ProhibitionNumberData2
   m_EditorClassIdentifier: Assembly-CSharp::ProhibitionNumberData
+  descrition: Pas trop vieux
   numberType: 1
   symbolType: 1
   number: 50

@@ -3,7 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ProhibitionData", menuName = "Scriptable Objects/Prohibition/ProhibitionData", order = 1)]
 public class ProhibitionData : ScriptableObject
 {
-    
+    [Header("Prohibition")]
+    public string descrition;
 }
 
 public enum symbolType
