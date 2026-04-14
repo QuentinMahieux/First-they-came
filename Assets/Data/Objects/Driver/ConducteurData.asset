@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7504fdeedd733a245b1573e79a5246a1, type: 3}
   m_Name: ConducteurData
   m_EditorClassIdentifier: Assembly-CSharp::ConducteurData
-  speed: 50
+  speed: 94.2
   plaque: DR-590-ST
   carPrefab: {fileID: 7471601705619016154, guid: ad15e68f5106a2e449b9b7eaf25dcac4, type: 3}
-  displayDataCar: {fileID: 11400000, guid: d0d6445f69aef904e9d8a41a6828f1b0, type: 2}
+  driveType: 0
   firstName: Quentin
   familyName: MAHIEUX
-  displayDataIdentity: {fileID: 11400000, guid: 1cac8160918aa0843aec4638e1d8583e, type: 2}
+  licenceType: 0
+  displayData: {fileID: 0}
   nationality: 0
   gender: 0
   age: 19
-  validity: {x: 11, y: 6, z: 2028}
+  validity: 0

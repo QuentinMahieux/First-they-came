@@ -30,14 +30,6 @@ public class RuleManager : MonoBehaviour
         ResetRule();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ChekRule(GameManager.instance.actualDriver);
-        }
-    }
-
     //Ajoute 
     public void AddRule(ProhibitionData prohibitionData)
     {
@@ -123,6 +115,8 @@ public class RuleManager : MonoBehaviour
 
     public void VerifyRule()
     {
+        ChekRule(GameManager.instance.actualDriver);
+        
         DrivePunish newDrivePunish = new DrivePunish();
         newDrivePunish.driverData = GameManager.instance.actualDriver;
         foreach (RuleChekUp rule in ruleChekUps)
@@ -157,8 +151,8 @@ public class RuleChekUp
 public class DrivePunish
 {
     public DriverData driverData;
-    
-    public List<ProhibitionData> valideProhibitionDatas;
-    public List<ProhibitionData> forgetProhibitionDatas;
-    public List<ProhibitionData> burrProhibitionDatas;
+
+    public List<ProhibitionData> valideProhibitionDatas = new List<ProhibitionData>();
+    public List<ProhibitionData> forgetProhibitionDatas =  new List<ProhibitionData>();
+    public List<ProhibitionData> burrProhibitionDatas = new List<ProhibitionData>();
 }

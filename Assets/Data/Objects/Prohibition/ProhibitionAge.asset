@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e2fa1a4e23a07b4a9f09253bdf566ef, type: 3}
-  m_Name: ProhibitionNumberData2
+  m_Name: ProhibitionAge
   m_EditorClassIdentifier: Assembly-CSharp::ProhibitionNumberData
-  descrition: Pas trop vieux
+  descrition: Interdit au moins de 50 ans
   numberType: 1
   symbolType: 1
   number: 50

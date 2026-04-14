@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e2fa1a4e23a07b4a9f09253bdf566ef, type: 3}
-  m_Name: ProhibitionNumberData
+  m_Name: ProhibitionSpeed
   m_EditorClassIdentifier: Assembly-CSharp::ProhibitionNumberData
-  descrition: Pas de limite de vitesse ettt
+  descrition: "Limite de vitesse \xE0 120"
   numberType: 0
   symbolType: 0
   number: 120
