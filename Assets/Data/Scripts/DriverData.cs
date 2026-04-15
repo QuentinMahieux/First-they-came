@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DriverData", menuName = "Scriptable Objects/DriverData")]
 public class DriverData : ScriptableObject
 {
+    public int id;
     [Header("Car")] 
     [Tooltip("Vitesse a laquel roule la voiture")]
     public float speed;
