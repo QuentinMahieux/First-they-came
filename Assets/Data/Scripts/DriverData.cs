@@ -17,10 +17,12 @@ public class DriverData : ScriptableObject
     public string firstName;
     public string familyName;
     public LicenceType licenceType;
-    public DisplayData displayData;
     public Nationality nationality;
     public Gender gender;
     public int age;
+
+    [Header("Permis")] 
+    public int defaultPermisPoint;
     public bool validity;
 
 }

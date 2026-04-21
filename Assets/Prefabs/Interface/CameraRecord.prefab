@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 203091262434678971}
   - component: {fileID: 2239519737262054677}
   - component: {fileID: 7536507108851966624}
-  - component: {fileID: 3711241830083156504}
+  - component: {fileID: 4611988463479172638}
   m_Layer: 5
   m_Name: CameraRecord
   m_TagString: Untagged
@@ -91,7 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InterfaceMovement
   canvas: {fileID: 0}
---- !u!114 &3711241830083156504
+  folderParent: {fileID: 0}
+  isOpenDefault: 0
+--- !u!114 &4611988463479172638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,13 +102,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3725870618125340796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7255d4826f17645b274016072cb581, type: 3}
+  m_Script: {fileID: 11500000, guid: ae2dfcd325cfdbc4dbf0eac3033efeb1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraCapture
-  cam: {fileID: 0}
-  displayImage: {fileID: 7351654243843293523}
-  width: 512
-  height: 512
+  m_EditorClassIdentifier: Assembly-CSharp::InterfaceScreenDrive
+  screenDrive: {fileID: 7351654243843293523}
 --- !u!1 &6737635324456295507
 GameObject:
   m_ObjectHideFlags: 0

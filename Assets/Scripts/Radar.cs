@@ -3,14 +3,31 @@ using UnityEngine;
 
 public class Radar : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public Camera mainCamera;
+
+
+    
+    void Update()
     {
-        if (other.CompareTag("Drive"))
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 100f;
+        mousePos = mainCamera.ScreenToWorldPoint(mousePos);
+        
+        Debug.DrawRay(transform.position, mousePos - transform.position, Color.violetRed);
+
+        if (Input.GetMouseButton(0))
         {
-            Drive drive = other.GetComponent<Drive>();
-            drive.AddDriver();
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.CompareTag("Drive"))
+                {
+                    hit.collider.GetComponent<Drive>().AddDriver();
+                }
+            }
         }
     }
-    
     
 }

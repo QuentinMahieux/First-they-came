@@ -6,20 +6,26 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("Day")]
-    [SerializeField] private DayData[] dayDatas;
-    [SerializeField] private int actualDay;
+    [SerializeField] public DayData[] dayDatas;
+    [SerializeField] public int actualDay;
     
     [Header("Driver")]
     public DriverData actualDriver;
+
+    [HideInInspector] public int numberDriveSpawn;
     [SerializeField] private Transform roadTransform;
-    private GameObject roadPrefab;
     
     [Header("Camera")]
-    public CameraCapture[] camerasCaptures = new CameraCapture[2];
+    public Camera verificationCamera;
+    public Camera radarCamera;
+    
     
     [Header("Game Stat")]
     [Tooltip("Phase de jeu dans laquel on veritie les informations de la voiture")]
     public bool isScanning;
+    
+    [Header("Settings")]
+    public SceneSettingData settings;
     
     
     void Awake()
@@ -36,47 +42,32 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        NewDay();
+        numberDriveSpawn = 0;
+        VerificationToRadar();
     }
 
-    void NewDay()
+    public void RadarToVerication(DriverData driverData)
     {
+        verificationCamera.gameObject.SetActive(true);
+        radarCamera.gameObject.SetActive(false);
         
-        //Met a jour la route
-        if (roadPrefab) Destroy(roadPrefab);
-        roadPrefab = Instantiate(dayDatas[actualDay].roadPrefab, roadTransform.position, roadTransform.rotation);
-
-        int index = 0;
-        foreach (Transform drive in roadPrefab.GetComponentsInChildren<Transform>())
-        {
-            if(drive.gameObject.CompareTag("DriveEmplacement") && index <= dayDatas[actualDay].driverDatas.Length)
-            {
-                roadPrefab = Instantiate(dayDatas[actualDay].driverDatas[index].carPrefab, drive.position, Quaternion.identity);
-                Drive actualDrive = roadPrefab.GetComponent<Drive>();
-                actualDrive.InstanceDriver(dayDatas[actualDay].driverDatas[index]);
-                index++;
-            }
-        }
-        actualDay++;
-    }
-
-    void EndDay()
-    {
-        
-    }
-
-    public void ScanDrive(DriverData driverData)
-    {
         isScanning = true;
         actualDriver = driverData;
-
-        foreach (CameraCapture cam in camerasCaptures)
-        {
-            cam.TakePhoto();
-        }
+        
+        RuleManager.instance.ResetRule();
         
         //ChangeInterface
         DriveInformation.instance.ChangeText(actualDriver);
+        PermisInformation.instance.ChangeInformation(actualDriver);
+    }
+    
+    public void VerificationToRadar()
+    {
+        verificationCamera.gameObject.SetActive(false);
+        radarCamera.gameObject.SetActive(true);
+        
+        isScanning = false;
+        actualDriver = null;
     }
     
     

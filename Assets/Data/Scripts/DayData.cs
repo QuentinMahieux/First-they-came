@@ -4,5 +4,5 @@ using UnityEngine;
 public class DayData : ScriptableObject
 {
     [Tooltip("Toute les voitures (elle apparatront dans l'ordre")]public DriverData[] driverDatas;
-    [Tooltip("Prefab contenant toute les positions des voitures")]public GameObject roadPrefab;
+    [Tooltip("Intervale d'appartion entre 2 voiture")]public float intervaToSpawn;
 }

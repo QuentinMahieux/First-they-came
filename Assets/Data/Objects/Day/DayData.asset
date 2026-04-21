@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: DayData
   m_EditorClassIdentifier: Assembly-CSharp::DayData
   driverDatas:
+  - {fileID: 11400000, guid: d7685afb8dd1d164382c862deb75044e, type: 2}
+  - {fileID: 11400000, guid: e9fbf2c6d97dd8d4ca3102acc2e71627, type: 2}
   - {fileID: 11400000, guid: e9fbf2c6d97dd8d4ca3102acc2e71627, type: 2}
   - {fileID: 11400000, guid: bdb7e6a84a56fde48b9a0824490bd46c, type: 2}
+  - {fileID: 11400000, guid: d7685afb8dd1d164382c862deb75044e, type: 2}
   - {fileID: 11400000, guid: e9fbf2c6d97dd8d4ca3102acc2e71627, type: 2}
-  roadPrefab: {fileID: 3212898257008701295, guid: ea492fc53fac0a745b225634bbf7b20a, type: 3}
+  - {fileID: 11400000, guid: d7685afb8dd1d164382c862deb75044e, type: 2}
+  - {fileID: 11400000, guid: bdb7e6a84a56fde48b9a0824490bd46c, type: 2}
+  intervaToSpawn: 2.38

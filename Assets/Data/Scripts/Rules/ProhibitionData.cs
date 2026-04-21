@@ -5,6 +5,7 @@ public class ProhibitionData : ScriptableObject
 {
     [Header("Prohibition")]
     public string descrition;
+    public int pointRemoved;
 }
 
 public enum symbolType

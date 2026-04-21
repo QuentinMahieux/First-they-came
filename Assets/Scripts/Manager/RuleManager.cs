@@ -37,7 +37,7 @@ public class RuleManager : MonoBehaviour
     }
 
     //Resert les regle
-    void ResetRule()
+    public void ResetRule()
     {
         ruleChekUps = new List<RuleChekUp>();
         foreach (ProhibitionData prohibitionData in prohibitionDatas)
@@ -71,6 +71,8 @@ public class RuleManager : MonoBehaviour
             {
                 ruleChekUp.isValid = CheckNumberRule(prohibitionNumberData, driverData);
             }
+
+            if (ruleChekUp.isValid) ;
         }
     }
 
@@ -133,9 +135,14 @@ public class RuleManager : MonoBehaviour
             {
                 newDrivePunish.burrProhibitionDatas.Add(rule.prohibitionData);
             }
+            
+            //Rajoute à sont casier judiciaire le faute observer même si fausse
+            if(rule.isCheked) CasierJudicierManager.instance.RemovePoint(GameManager.instance.actualDriver, rule.prohibitionData);
         }
         
         drivePunishs.Add(newDrivePunish);
+        GameManager.instance.VerificationToRadar();
+
     }
     
 }

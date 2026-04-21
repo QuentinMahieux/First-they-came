@@ -18,7 +18,6 @@ public class InterfaceMovement : MonoBehaviour, IBeginDragHandler, IDragHandler,
         rectTransform = GetComponent<RectTransform>();
         if (!isOpenDefault) folderParent.ClickFolder();
         isOnDrag = false;
-        
     }
     
     public void OnBeginDrag(PointerEventData eventData)
